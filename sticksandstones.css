@@ -9,6 +9,9 @@ h1 {
 
 img {
   visibility: hidden;
+  height: 100%;
+  width: 100%;
+  position: absolute;
 }
 
 .row {
@@ -22,4 +25,5 @@ img {
   height: 150px;
   border: 2px solid white;
   display: inline-block;
+  position: relative;
 }
