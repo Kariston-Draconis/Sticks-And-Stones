@@ -16,14 +16,19 @@ img {
 
 .row {
   margin: 0 auto;
-  width: 500px;
-  height: 158px;
+  width: 458px;
+  height: 153px;
+  background-color: black;
+}
+
+.row:last-child {
+  height: 150px;
 }
 
 .gridSquare {
   width: 150px;
   height: 150px;
-  border: 2px solid white;
   display: inline-block;
   position: relative;
+  background-color: darkorchid;
 }
