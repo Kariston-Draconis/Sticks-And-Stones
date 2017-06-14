@@ -1,0 +1,25 @@
+body {
+  background-color: darkorchid;
+}
+
+h1 {
+  color: tomato;
+  text-align: center;
+}
+
+img {
+  visibility: hidden;
+}
+
+.row {
+  margin: 0 auto;
+  width: 500px;
+  height: 158px;
+}
+
+.gridSquare {
+  width: 150px;
+  height: 150px;
+  border: 2px solid white;
+  display: inline-block;
+}
