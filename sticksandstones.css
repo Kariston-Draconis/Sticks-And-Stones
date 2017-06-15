@@ -7,6 +7,17 @@ h1 {
   text-align: center;
 }
 
+img {
+  position: absolute;
+  z-index: 2;
+  left: 25%;
+}
+
+.board {
+  position: absolute;
+  left: 25%;
+}
+
 .row {
   margin: 0 auto;
   width: 458px;
@@ -24,4 +35,5 @@ h1 {
   display: inline-block;
   position: relative;
   background-color: darkorchid;
+  z-index: 1;
 }

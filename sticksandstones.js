@@ -1,7 +1,7 @@
 console.log('Sticks And Stones');
 
 var count = 0;
-var gridValues = new Array(9)
+var gridValues = ["A", "A", "A", "A", "A", "A", "A", "A", "A",]
 var board = document.querySelector('.board')
 var newRound = document.querySelector('#newRound')
 
@@ -26,52 +26,54 @@ var play = function() {
 var checkWin = function() {
   if (gridValues[0] == gridValues[1] && gridValues[1] == gridValues[2]) {
     if (gridValues[0] === "S") {
-      console.log('Stones Wines');
+      stoneWins();
     } else if (gridValues[0] === "B") {
-      console.log('Bones Wins');
+      bonesWins();
     }
   } else if (gridValues[3] == gridValues[4] && gridValues[4] == gridValues[5]) {
     if (gridValues[3] === "S") {
-      console.log('Stones Wines');
+      stoneWins();
     } else if (gridValues[3] === "B") {
-      console.log('Bones Wins');
+      bonesWins();
     }
   } else if (gridValues[6] == gridValues[7] && gridValues[7] == gridValues[8]) {
     if (gridValues[6] === "S") {
-      console.log('Stones Wines');
+      stoneWins();
     } else if (gridValues[6] === "B") {
-      console.log('Bones Wins');
+      bonesWins();
     }
   } else if (gridValues[0] == gridValues[3] && gridValues[3] == gridValues[6]) {
     if (gridValues[0] === "S") {
-      console.log('Stones Wines');
+      stoneWins();
     } else if (gridValues[0] === "B") {
-      console.log('Bones Wins');
+      bonesWins();
     }
-  } else if (gridValues[1] == gridValues [4] && gridValues[4] == gridValues[7]) {
+  } else if (gridValues[1] == gridValues[4] && gridValues[4] == gridValues[7]) {
     if (gridValues[1] === "S") {
-      console.log('Stones Wines');
+      stoneWins();
     } else if (gridValues[1] === "B") {
-      console.log('Bones Wins');
+      bonesWins();
     }
   }else if (gridValues[2] == gridValues[5] && gridValues[5] == gridValues[8]) {
     if (gridValues[2] === "S") {
-      console.log('Stones Wines');
+      stoneWins();
     } else if (gridValues[2] === "B") {
-      console.log('Bones Wins');
+      bonesWins();
     }
   }else if (gridValues[0] == gridValues[4] && gridValues[4] == gridValues[8]) {
     if (gridValues[0] === "S") {
-      console.log('Stones Wines');
+      stoneWins();
     } else if (gridValues[0] === "B") {
-      console.log('Bones Wins');
+      bonesWins();
     }
   } else if (gridValues[2] == gridValues[4] && gridValues[4] == gridValues[6]) {
     if (gridValues[2] === "S") {
-      console.log('Stones Wines');
+      stoneWins();
     } else if (gridValues[2] === "B") {
-      console.log('Bones Wins');
+      bonesWins();
     }
+  } else if (gridValues.indexOf("A") === -1) {
+    tie();
   }
 }
 
@@ -79,19 +81,33 @@ var resetBoard = function() {
   for (square = 0; square < 9; square++) {
     var grid = document.querySelectorAll('.gridSquare')[square];
     grid.style.backgroundImage = "";
-    gridValues = new Array(9)
-    count = 0
+    gridValues = ["A", "A", "A", "A", "A", "A", "A", "A", "A",];
+    count = 0;
   };
+  document.body.removeChild(document.body.childNodes[4]);
 }
 
 
-// var winStone = function() {
-//    = "StoneWins.png";
-// }
-//
-// var winBones = function() {
-//
-// }
+var stoneWins = function() {
+   var winStone = document.createElement('IMG');
+   winStone.setAttribute('src', 'StoneWins.png');
+   winStone.setAttribute("alt", "Stone Wins");
+   board.parentNode.insertBefore(winStone, board.nextSibling);
+}
+
+var bonesWins = function() {
+  var winBones = document.createElement('IMG');
+  winBones.setAttribute('src', 'BoneWins.png');
+  winBones.setAttribute("alt", "Bones Wins");
+  board.parentNode.insertBefore(winBones, board.nextSibling);
+}
+
+var tie = function() {
+  var noWin = document.createElement('IMG');
+  noWin.setAttribute('src', 'Tie.png');
+  noWin.setAttribute("alt", "Tie");
+  board.parentNode.insertBefore(noWin, board.nextSibling);
+}
 
 board.addEventListener('click', play)
 newRound.addEventListener('click', resetBoard)
