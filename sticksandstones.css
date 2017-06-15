@@ -20,6 +20,25 @@ button {
   top: 90%;
 }
 
+p {
+  position: absolute;
+  top: 25px;
+}
+
+.counter {
+  height: 40px;
+}
+
+.stoneCounter {
+  position: absolute;
+  left: 5%;
+}
+
+.bonesCounter {
+  position: absolute;
+  right: 8%;
+}
+
 .board {
   position: absolute;
   left: 33%;

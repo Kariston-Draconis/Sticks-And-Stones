@@ -4,6 +4,8 @@ var count = 0;
 var gridValues = ["A", "A", "A", "A", "A", "A", "A", "A", "A"];
 var board = document.querySelector('.board');
 var newRound = document.querySelector('.newRound')
+var bonesWinCount = 0;
+var stoneWinCount = 0;
 
 var play = function() {
   if (event.target.style.backgroundImage == "" && event.target.className == "gridSquare") {
@@ -97,6 +99,8 @@ var stoneWins = function() {
    var audio = new Audio('bone-crack.wav');
    audio.play();
    document.querySelector('.newRound').style.display = "inline";
+   stoneWinCount = stoneWinCount + 1;
+   document.querySelector('.stoneCount').innerHTML = stoneWinCount;
 }
 
 var bonesWins = function() {
@@ -107,6 +111,8 @@ var bonesWins = function() {
   var audio = new Audio('stone-break.wav');
   audio.play();
   document.querySelector('.newRound').style.display = "inline";
+  bonesWinCount = bonesWinCount + 1;
+  document.querySelector('.bonesCount').innerHTML = bonesWinCount;
 }
 
 var tie = function() {
