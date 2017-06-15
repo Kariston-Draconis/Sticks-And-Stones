@@ -10,12 +10,19 @@ h1 {
 img {
   position: absolute;
   z-index: 2;
-  left: 25%;
+  left: 33%;
+}
+
+button {
+  display: none;
+  position: absolute;
+  left: 47%;
+  top: 90%;
 }
 
 .board {
   position: absolute;
-  left: 25%;
+  left: 33%;
 }
 
 .row {

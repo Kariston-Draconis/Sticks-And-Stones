@@ -1,9 +1,9 @@
 console.log('Sticks And Stones');
 
 var count = 0;
-var gridValues = ["A", "A", "A", "A", "A", "A", "A", "A", "A",]
-var board = document.querySelector('.board')
-var newRound = document.querySelector('#newRound')
+var gridValues = ["A", "A", "A", "A", "A", "A", "A", "A", "A"];
+var board = document.querySelector('.board');
+var newRound = document.querySelector('.newRound')
 
 var play = function() {
   if (event.target.style.backgroundImage == "" && event.target.className == "gridSquare") {
@@ -81,10 +81,11 @@ var resetBoard = function() {
   for (square = 0; square < 9; square++) {
     var grid = document.querySelectorAll('.gridSquare')[square];
     grid.style.backgroundImage = "";
-    gridValues = ["A", "A", "A", "A", "A", "A", "A", "A", "A",];
+    gridValues = ["A", "A", "A", "A", "A", "A", "A", "A", "A"];
     count = 0;
   };
   document.body.removeChild(document.body.childNodes[4]);
+  document.querySelector('.newRound').style.display = "none";
 }
 
 
@@ -93,6 +94,9 @@ var stoneWins = function() {
    winStone.setAttribute('src', 'StoneWins.png');
    winStone.setAttribute("alt", "Stone Wins");
    board.parentNode.insertBefore(winStone, board.nextSibling);
+   var audio = new Audio('bone-crack.wav');
+   audio.play();
+   document.querySelector('.newRound').style.display = "inline";
 }
 
 var bonesWins = function() {
@@ -100,6 +104,9 @@ var bonesWins = function() {
   winBones.setAttribute('src', 'BoneWins.png');
   winBones.setAttribute("alt", "Bones Wins");
   board.parentNode.insertBefore(winBones, board.nextSibling);
+  var audio = new Audio('stone-break.wav');
+  audio.play();
+  document.querySelector('.newRound').style.display = "inline";
 }
 
 var tie = function() {
@@ -107,6 +114,7 @@ var tie = function() {
   noWin.setAttribute('src', 'Tie.png');
   noWin.setAttribute("alt", "Tie");
   board.parentNode.insertBefore(noWin, board.nextSibling);
+  document.querySelector('.newRound').style.display = "inline";
 }
 
 board.addEventListener('click', play)
