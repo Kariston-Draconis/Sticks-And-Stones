@@ -3,8 +3,9 @@ body {
 }
 
 h1 {
-  color: tomato;
+  color: crimson;
   text-align: center;
+  background-image: url(stone-banner.jpg);
 }
 
 img {
@@ -23,6 +24,17 @@ button {
 p {
   position: absolute;
   top: 25px;
+}
+
+footer {
+  background-image: url(Bones-banner.png);
+  background-position: bottom;
+  position: absolute;
+  bottom: 10px;
+  left: 37px;
+  height: 50px;
+  width: 95%;
+  z-index: -1;
 }
 
 .counter {

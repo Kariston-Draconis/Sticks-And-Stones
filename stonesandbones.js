@@ -1,4 +1,4 @@
-console.log('Sticks And Stones');
+console.log('Stones And Bones');
 
 var count = 0;
 var gridValues = ["A", "A", "A", "A", "A", "A", "A", "A", "A"];
